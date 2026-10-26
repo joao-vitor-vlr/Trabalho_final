@@ -1,0 +1,9 @@
+.venv/
+.git/
+**/__pycache__/
+**/*.pyc
+dataset/*.csv
+resultados/
+RELATORIO_RESULTADOS.md
+*.prof
+.pytest_cache/

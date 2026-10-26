@@ -1,0 +1,134 @@
+[
+  {
+    "modo": "processos",
+    "workers": 2,
+    "chunks": 8,
+    "total_registros": 10000,
+    "smtp": "simulado 0-0ms",
+    "rodadas_hash": 2000,
+    "contadores": {
+      "enviados": 9435,
+      "invalidos": 328,
+      "opt_out": 177,
+      "erros_smtp": 60,
+      "retries": 0,
+      "renderizados": 9495
+    },
+    "correcao_ok": true,
+    "tempos_s": {
+      "total": 3.134820707986364,
+      "carga_csv": 0.02152495799236931,
+      "fase_paralela": 3.113252042006934,
+      "consolidacao": 4.370798706077039e-05
+    },
+    "throughput_registros_s": 3189.975099540365,
+    "throughput_envios_s": 3009.7415064163347,
+    "metricas_ms": {
+      "latencia_smtp_media": 0.0008743601905702202,
+      "cpu_wall_por_email": 0.6200141925186953,
+      "cpu_thread_por_email": 0.6182710649815675,
+      "espera_gil_cpu_por_email": 0.0017431275371277823,
+      "atraso_pos_io_por_email": 0.0,
+      "io_wall_por_email": 0.0027705290834917212
+    },
+    "config": {
+      "campanha_id": "local-processos-2-b03be8f5",
+      "assunto": "Oferta exclusiva para você",
+      "rodadas_hash": 2000,
+      "latencia_min_ms": 0.0,
+      "latencia_max_ms": 0.0,
+      "taxa_falha_transitoria": 0.0,
+      "max_tentativas": 4,
+      "smtp_url": null,
+      "seed": 42
+    }
+  },
+  {
+    "modo": "processos",
+    "workers": 4,
+    "chunks": 16,
+    "total_registros": 10000,
+    "smtp": "simulado 0-0ms",
+    "rodadas_hash": 2000,
+    "contadores": {
+      "enviados": 9435,
+      "invalidos": 328,
+      "opt_out": 177,
+      "erros_smtp": 60,
+      "retries": 0,
+      "renderizados": 9495
+    },
+    "correcao_ok": true,
+    "tempos_s": {
+      "total": 1.7625602920015808,
+      "carga_csv": 0.019037499994738027,
+      "fase_paralela": 1.7434746669896413,
+      "consolidacao": 4.812501720152795e-05
+    },
+    "throughput_registros_s": 5673.564782651436,
+    "throughput_envios_s": 5353.00837243163,
+    "metricas_ms": {
+      "latencia_smtp_media": 0.0010747215521798746,
+      "cpu_wall_por_email": 0.6880173906398248,
+      "cpu_thread_por_email": 0.6848055918904699,
+      "espera_gil_cpu_por_email": 0.0032117987493549063,
+      "atraso_pos_io_por_email": 0.0,
+      "io_wall_por_email": 0.0033338808888847054
+    },
+    "config": {
+      "campanha_id": "local-processos-4-4fe6e72c",
+      "assunto": "Oferta exclusiva para você",
+      "rodadas_hash": 2000,
+      "latencia_min_ms": 0.0,
+      "latencia_max_ms": 0.0,
+      "taxa_falha_transitoria": 0.0,
+      "max_tentativas": 4,
+      "smtp_url": null,
+      "seed": 42
+    }
+  },
+  {
+    "modo": "processos",
+    "workers": 8,
+    "chunks": 32,
+    "total_registros": 10000,
+    "smtp": "simulado 0-0ms",
+    "rodadas_hash": 2000,
+    "contadores": {
+      "enviados": 9435,
+      "invalidos": 328,
+      "opt_out": 177,
+      "erros_smtp": 60,
+      "retries": 0,
+      "renderizados": 9495
+    },
+    "correcao_ok": true,
+    "tempos_s": {
+      "total": 1.3378970409976318,
+      "carga_csv": 0.018573749985080212,
+      "fase_paralela": 1.319243958016159,
+      "consolidacao": 7.933299639262259e-05
+    },
+    "throughput_registros_s": 7474.41671037951,
+    "throughput_envios_s": 7052.112166243068,
+    "metricas_ms": {
+      "latencia_smtp_media": 0.002201531033283845,
+      "cpu_wall_por_email": 0.9774166268298746,
+      "cpu_thread_por_email": 0.8612869731437597,
+      "espera_gil_cpu_por_email": 0.11612965368611493,
+      "atraso_pos_io_por_email": 0.0,
+      "io_wall_por_email": 0.006226630525991101
+    },
+    "config": {
+      "campanha_id": "local-processos-8-1fa3f4a2",
+      "assunto": "Oferta exclusiva para você",
+      "rodadas_hash": 2000,
+      "latencia_min_ms": 0.0,
+      "latencia_max_ms": 0.0,
+      "taxa_falha_transitoria": 0.0,
+      "max_tentativas": 4,
+      "smtp_url": null,
+      "seed": 42
+    }
+  }
+]

@@ -1,0 +1,5 @@
+# Dependências da máquina host (Parte 1 + benchmark_runner + testes).
+# Os serviços da Parte 2 têm requirements próprios dentro de cada contêiner.
+requests==2.32.3
+matplotlib==3.9.2
+pytest==8.3.3

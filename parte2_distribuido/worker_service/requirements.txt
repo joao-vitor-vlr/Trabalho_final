@@ -1,0 +1,4 @@
+aio-pika==9.4.3
+aiohttp==3.10.10
+redis==5.1.1
+tenacity==9.0.0

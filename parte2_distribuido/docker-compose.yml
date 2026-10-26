@@ -1,0 +1,109 @@
+# Parte 2 — Arquitetura distribuída.
+#
+#   docker compose -f parte2_distribuido/docker-compose.yml up -d --build --wait --scale worker=3
+#   docker compose -f parte2_distribuido/docker-compose.yml down -v
+#
+# Contexto de build = raiz do repositório (o pacote common/ é compartilhado).
+name: emailmassa
+
+x-python-env: &python-env
+  REDIS_URL: redis://redis:6379/0
+  RABBITMQ_URL: amqp://guest:guest@rabbitmq:5672/?heartbeat=10
+  RODADAS_HASH: ${RODADAS_HASH:-2000}
+
+services:
+  # ---------------------------------------------------------------- Nó 2: broker
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    hostname: rabbitmq                      # nome fixo -> dados persistidos no volume
+    ports:
+      - "15672:15672"                       # painel de gerenciamento (guest/guest)
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "check_port_connectivity"]
+      interval: 5s
+      timeout: 10s
+      retries: 20
+      start_period: 10s
+
+  # ------------------------------------------- cache + fonte da verdade (idempotência)
+  redis:
+    image: redis:7.4-alpine
+    # AOF com fsync a cada segundo: as chaves de idempotência sobrevivem a um restart.
+    command: ["redis-server", "--appendonly", "yes", "--appendfsync", "everysec", "--save", ""]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  # ------------------------------------------------------------- Nó 4: SMTP Mock
+  smtp_mock:
+    build:
+      context: ..
+      dockerfile: parte2_distribuido/smtp_mock/Dockerfile
+    image: emailmassa/smtp_mock:latest
+    environment:
+      SMTP_LATENCIA_MIN_MS: ${SMTP_LATENCIA_MIN_MS:-5}
+      SMTP_LATENCIA_MAX_MS: ${SMTP_LATENCIA_MAX_MS:-15}
+      SMTP_TAXA_FALHA_TRANSITORIA: ${SMTP_TAXA_FALHA_TRANSITORIA:-0.02}
+      SMTP_DEDUP: ${SMTP_DEDUP:-true}
+    ports:
+      - "8025:8025"
+
+  # --------------------------------------------------------- Nó 1: API de Campanhas
+  api:
+    build:
+      context: ..
+      dockerfile: parte2_distribuido/api_service/Dockerfile
+    image: emailmassa/api:latest
+    environment:
+      <<: *python-env
+      TIMEOUT_REQUISICAO_S: "60"
+    ports:
+      - "8000:8000"
+    depends_on:
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+  # ----------------------------------------------------- Nó 3: Workers (escaláveis)
+  # Sem container_name e sem porta publicada -> pode ser escalado: --scale worker=N
+  worker:
+    build:
+      context: ..
+      dockerfile: parte2_distribuido/worker_service/Dockerfile
+    image: emailmassa/worker:latest
+    environment:
+      <<: *python-env
+      SMTP_URL: http://smtp_mock:8025
+      SMTP_TIMEOUT_S: "2.0"
+      SMTP_MAX_TENTATIVAS: "5"
+      CONCORRENCIA_POR_WORKER: ${CONCORRENCIA_POR_WORKER:-16}
+      PREFETCH: "1"
+      LEASE_MS: ${LEASE_MS:-3000}
+    # Cada réplica simula um "nó" de 1 vCPU: a escala vem de adicionar nós, não
+    # de um único contêiner consumindo a máquina inteira.
+    deploy:
+      resources:
+        limits:
+          cpus: "${WORKER_CPUS:-1.0}"
+          memory: 256M
+    restart: "no"   # no chaos test o worker morto deve PERMANECER morto
+    depends_on:
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      smtp_mock:
+        condition: service_healthy
+
+volumes:
+  rabbitmq_data:
+  redis_data:

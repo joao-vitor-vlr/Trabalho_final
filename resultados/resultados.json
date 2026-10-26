@@ -1,0 +1,1227 @@
+{
+  "ambiente": {
+    "data": "2026-10-25T23:37:00",
+    "plataforma": "macOS-26.5.1-arm64-arm-64bit",
+    "processador": "arm",
+    "cpus_logicas": 8,
+    "python": "3.12.6",
+    "docker": "27.3.1 | 8 vCPUs | 4109737984 B"
+  },
+  "esperado": {
+    "enviados": 9435,
+    "invalidos": 328,
+    "opt_out": 177,
+    "erros_smtp": 60,
+    "total": 10000
+  },
+  "seed": 42,
+  "teste1": {
+    "modo": "sequencial",
+    "workers": 1,
+    "chunks": 1,
+    "total_registros": 10000,
+    "smtp": "simulado 5-15ms",
+    "rodadas_hash": 2000,
+    "contadores": {
+      "enviados": 9435,
+      "invalidos": 328,
+      "opt_out": 177,
+      "erros_smtp": 60,
+      "retries": 184,
+      "renderizados": 9495
+    },
+    "correcao_ok": true,
+    "tempos_s": {
+      "total": 136.108088915993,
+      "carga_csv": 0.01970904099289328,
+      "fase_paralela": 136.08619954201276,
+      "consolidacao": 0.002180332987336442
+    },
+    "throughput_registros_s": 73.47101909697726,
+    "throughput_envios_s": 69.31990651799805,
+    "metricas_ms": {
+      "latencia_smtp_media": 12.017075533788132,
+      "cpu_wall_por_email": 1.9893605202362148,
+      "cpu_thread_por_email": 1.938299805687202,
+      "espera_gil_cpu_por_email": 0.051060714549012676,
+      "atraso_pos_io_por_email": 2.0435701522066743,
+      "io_wall_por_email": 12.341237594417663
+    },
+    "config": {
+      "campanha_id": "local-sequencial-1-a226f680",
+      "assunto": "Oferta exclusiva para você",
+      "rodadas_hash": 2000,
+      "latencia_min_ms": 5.0,
+      "latencia_max_ms": 15.0,
+      "taxa_falha_transitoria": 0.02,
+      "max_tentativas": 4,
+      "smtp_url": null,
+      "seed": 42
+    },
+    "confere_gabarito": true
+  },
+  "teste2": {
+    "threads": [
+      {
+        "modo": "threads",
+        "workers": 2,
+        "chunks": 8,
+        "total_registros": 10000,
+        "smtp": "simulado 5-15ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 201,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 68.490842625004,
+          "carga_csv": 0.023442375008016825,
+          "fase_paralela": 68.46426970799803,
+          "consolidacao": 0.0031305419979617
+        },
+        "throughput_registros_s": 146.0049200263349,
+        "throughput_envios_s": 137.75564204484698,
+        "metricas_ms": {
+          "latencia_smtp_media": 12.194159964796537,
+          "cpu_wall_por_email": 1.8427795844065273,
+          "cpu_thread_por_email": 1.75150642201158,
+          "espera_gil_cpu_por_email": 0.09127316239494762,
+          "atraso_pos_io_por_email": 2.1570781475883636,
+          "io_wall_por_email": 12.537698310850411
+        },
+        "config": {
+          "campanha_id": "local-threads-2-b9556bff",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 5.0,
+          "latencia_max_ms": 15.0,
+          "taxa_falha_transitoria": 0.02,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      },
+      {
+        "modo": "threads",
+        "workers": 4,
+        "chunks": 16,
+        "total_registros": 10000,
+        "smtp": "simulado 5-15ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 177,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 33.59682220799732,
+          "carga_csv": 0.023636124999029562,
+          "fase_paralela": 33.572925916989334,
+          "consolidacao": 0.00026016600895673037
+        },
+        "throughput_registros_s": 297.6471982406604,
+        "throughput_envios_s": 280.83013154006306,
+        "metricas_ms": {
+          "latencia_smtp_media": 12.429992118809633,
+          "cpu_wall_por_email": 1.309787590367957,
+          "cpu_thread_por_email": 1.2732070424433914,
+          "espera_gil_cpu_por_email": 0.03658054792456554,
+          "atraso_pos_io_por_email": 2.4507957963608757,
+          "io_wall_por_email": 12.733178773521935
+        },
+        "config": {
+          "campanha_id": "local-threads-4-bb111768",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 5.0,
+          "latencia_max_ms": 15.0,
+          "taxa_falha_transitoria": 0.02,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      },
+      {
+        "modo": "threads",
+        "workers": 8,
+        "chunks": 32,
+        "total_registros": 10000,
+        "smtp": "simulado 5-15ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 185,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 16.570869250019314,
+          "carga_csv": 0.044769000000087544,
+          "fase_paralela": 16.525510834006127,
+          "consolidacao": 0.0005894160130992532
+        },
+        "throughput_registros_s": 603.4686442286874,
+        "throughput_envios_s": 569.3726658297664,
+        "metricas_ms": {
+          "latencia_smtp_media": 12.466693670822284,
+          "cpu_wall_por_email": 0.8353763298108721,
+          "cpu_thread_por_email": 0.8297772675092158,
+          "espera_gil_cpu_por_email": 0.005599062301656289,
+          "atraso_pos_io_por_email": 2.4969983584530815,
+          "io_wall_por_email": 12.78562800261548
+        },
+        "config": {
+          "campanha_id": "local-threads-8-3fc99aa2",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 5.0,
+          "latencia_max_ms": 15.0,
+          "taxa_falha_transitoria": 0.02,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      }
+    ],
+    "processos": [
+      {
+        "modo": "processos",
+        "workers": 2,
+        "chunks": 8,
+        "total_registros": 10000,
+        "smtp": "simulado 5-15ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 201,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 69.64594229098293,
+          "carga_csv": 0.028062583005521446,
+          "fase_paralela": 69.61752687499393,
+          "consolidacao": 0.0003528329834807664
+        },
+        "throughput_registros_s": 143.58338290865083,
+        "throughput_envios_s": 135.47092177431205,
+        "metricas_ms": {
+          "latencia_smtp_media": 12.036682993797195,
+          "cpu_wall_por_email": 2.2269853903648893,
+          "cpu_thread_por_email": 2.1844636632964716,
+          "espera_gil_cpu_por_email": 0.04252172706841801,
+          "atraso_pos_io_por_email": 1.9991054389231644,
+          "io_wall_por_email": 12.376143632052303
+        },
+        "config": {
+          "campanha_id": "local-processos-2-c465c728",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 5.0,
+          "latencia_max_ms": 15.0,
+          "taxa_falha_transitoria": 0.02,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      },
+      {
+        "modo": "processos",
+        "workers": 4,
+        "chunks": 16,
+        "total_registros": 10000,
+        "smtp": "simulado 5-15ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 177,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 32.97381170798326,
+          "carga_csv": 0.023137207987019792,
+          "fase_paralela": 32.95050954198814,
+          "consolidacao": 0.00016495800809934735
+        },
+        "throughput_registros_s": 303.2709742070526,
+        "throughput_envios_s": 286.1361641643541,
+        "metricas_ms": {
+          "latencia_smtp_media": 12.006304222978375,
+          "cpu_wall_por_email": 1.4506112310700432,
+          "cpu_thread_por_email": 1.375386705002631,
+          "espera_gil_cpu_por_email": 0.07522452606741224,
+          "atraso_pos_io_por_email": 2.0053221239579506,
+          "io_wall_por_email": 12.301159195840778
+        },
+        "config": {
+          "campanha_id": "local-processos-4-abbc0ae3",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 5.0,
+          "latencia_max_ms": 15.0,
+          "taxa_falha_transitoria": 0.02,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      },
+      {
+        "modo": "processos",
+        "workers": 8,
+        "chunks": 32,
+        "total_registros": 10000,
+        "smtp": "simulado 5-15ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 185,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 17.147689665987855,
+          "carga_csv": 0.03174266600399278,
+          "fase_paralela": 17.1158053749823,
+          "consolidacao": 0.00014162500156089664
+        },
+        "throughput_registros_s": 583.1689396522511,
+        "throughput_envios_s": 550.2198945618989,
+        "metricas_ms": {
+          "latencia_smtp_media": 12.24021591058827,
+          "cpu_wall_por_email": 1.4228929340290843,
+          "cpu_thread_por_email": 1.217212581990521,
+          "espera_gil_cpu_por_email": 0.20568035203856302,
+          "atraso_pos_io_por_email": 2.241643754627391,
+          "io_wall_por_email": 12.561402128222966
+        },
+        "config": {
+          "campanha_id": "local-processos-8-c42ea460",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 5.0,
+          "latencia_max_ms": 15.0,
+          "taxa_falha_transitoria": 0.02,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      }
+    ]
+  },
+  "teste2b": {
+    "sequencial": {
+      "modo": "sequencial",
+      "workers": 1,
+      "chunks": 1,
+      "total_registros": 10000,
+      "smtp": "simulado 0-0ms",
+      "rodadas_hash": 2000,
+      "contadores": {
+        "enviados": 9435,
+        "invalidos": 328,
+        "opt_out": 177,
+        "erros_smtp": 60,
+        "retries": 0,
+        "renderizados": 9495
+      },
+      "correcao_ok": true,
+      "tempos_s": {
+        "total": 5.415741083998,
+        "carga_csv": 0.020807958993827924,
+        "fase_paralela": 5.394793582992861,
+        "consolidacao": 0.00013954201131127775
+      },
+      "throughput_registros_s": 1846.4693649309052,
+      "throughput_envios_s": 1742.143845812309,
+      "metricas_ms": {
+        "latencia_smtp_media": 0.000857310642295324,
+        "cpu_wall_por_email": 0.5652325638068919,
+        "cpu_thread_por_email": 0.5637651955766182,
+        "espera_gil_cpu_por_email": 0.0014673682302737457,
+        "atraso_pos_io_por_email": 0.0,
+        "io_wall_por_email": 0.0026352931773549965
+      },
+      "config": {
+        "campanha_id": "local-sequencial-1-3c2cd66e",
+        "assunto": "Oferta exclusiva para você",
+        "rodadas_hash": 2000,
+        "latencia_min_ms": 0.0,
+        "latencia_max_ms": 0.0,
+        "taxa_falha_transitoria": 0.0,
+        "max_tentativas": 4,
+        "smtp_url": null,
+        "seed": 42
+      },
+      "confere_gabarito": true
+    },
+    "threads": [
+      {
+        "modo": "threads",
+        "workers": 2,
+        "chunks": 8,
+        "total_registros": 10000,
+        "smtp": "simulado 0-0ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 0,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 5.483061584003735,
+          "carga_csv": 0.023201792006148025,
+          "fase_paralela": 5.459787083003903,
+          "consolidacao": 7.270899368450046e-05
+        },
+        "throughput_registros_s": 1823.7985925917676,
+        "throughput_envios_s": 1720.7539721103326,
+        "metricas_ms": {
+          "latencia_smtp_media": 0.0009508125137766723,
+          "cpu_wall_por_email": 1.1434305103486153,
+          "cpu_thread_por_email": 0.5698033470247507,
+          "espera_gil_cpu_por_email": 0.5736271633238647,
+          "atraso_pos_io_por_email": 0.0,
+          "io_wall_por_email": 0.0048070726879411866
+        },
+        "config": {
+          "campanha_id": "local-threads-2-46ca2fb6",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 0.0,
+          "latencia_max_ms": 0.0,
+          "taxa_falha_transitoria": 0.0,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      },
+      {
+        "modo": "threads",
+        "workers": 4,
+        "chunks": 16,
+        "total_registros": 10000,
+        "smtp": "simulado 0-0ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 0,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 5.456423166993773,
+          "carga_csv": 0.024268042005132884,
+          "fase_paralela": 5.432116417010548,
+          "consolidacao": 3.8707978092134e-05
+        },
+        "throughput_registros_s": 1832.7024305025668,
+        "throughput_envios_s": 1729.1547431791719,
+        "metricas_ms": {
+          "latencia_smtp_media": 0.0035414691788904964,
+          "cpu_wall_por_email": 2.2544959108781693,
+          "cpu_thread_por_email": 0.568880174934176,
+          "espera_gil_cpu_por_email": 1.685615735943993,
+          "atraso_pos_io_por_email": 0.0,
+          "io_wall_por_email": 0.00850375532797916
+        },
+        "config": {
+          "campanha_id": "local-threads-4-b2c35c7c",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 0.0,
+          "latencia_max_ms": 0.0,
+          "taxa_falha_transitoria": 0.0,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      },
+      {
+        "modo": "threads",
+        "workers": 8,
+        "chunks": 32,
+        "total_registros": 10000,
+        "smtp": "simulado 0-0ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 0,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 5.793389709026087,
+          "carga_csv": 0.020834334020037204,
+          "fase_paralela": 5.77237579098437,
+          "consolidacao": 0.00017958402168005705
+        },
+        "throughput_registros_s": 1726.1051823287537,
+        "throughput_envios_s": 1628.5802395271792,
+        "metricas_ms": {
+          "latencia_smtp_media": 0.007642247310257702,
+          "cpu_wall_por_email": 4.560695016547486,
+          "cpu_thread_por_email": 0.5881958127435495,
+          "espera_gil_cpu_por_email": 3.972499203803937,
+          "atraso_pos_io_por_email": 0.0,
+          "io_wall_por_email": 0.020434434155150345
+        },
+        "config": {
+          "campanha_id": "local-threads-8-12552feb",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 0.0,
+          "latencia_max_ms": 0.0,
+          "taxa_falha_transitoria": 0.0,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      }
+    ],
+    "processos": [
+      {
+        "modo": "processos",
+        "workers": 2,
+        "chunks": 8,
+        "total_registros": 10000,
+        "smtp": "simulado 0-0ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 0,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 3.134820707986364,
+          "carga_csv": 0.02152495799236931,
+          "fase_paralela": 3.113252042006934,
+          "consolidacao": 4.370798706077039e-05
+        },
+        "throughput_registros_s": 3189.975099540365,
+        "throughput_envios_s": 3009.7415064163347,
+        "metricas_ms": {
+          "latencia_smtp_media": 0.0008743601905702202,
+          "cpu_wall_por_email": 0.6200141925186953,
+          "cpu_thread_por_email": 0.6182710649815675,
+          "espera_gil_cpu_por_email": 0.0017431275371277823,
+          "atraso_pos_io_por_email": 0.0,
+          "io_wall_por_email": 0.0027705290834917212
+        },
+        "config": {
+          "campanha_id": "local-processos-2-b03be8f5",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 0.0,
+          "latencia_max_ms": 0.0,
+          "taxa_falha_transitoria": 0.0,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      },
+      {
+        "modo": "processos",
+        "workers": 4,
+        "chunks": 16,
+        "total_registros": 10000,
+        "smtp": "simulado 0-0ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 0,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 1.7625602920015808,
+          "carga_csv": 0.019037499994738027,
+          "fase_paralela": 1.7434746669896413,
+          "consolidacao": 4.812501720152795e-05
+        },
+        "throughput_registros_s": 5673.564782651436,
+        "throughput_envios_s": 5353.00837243163,
+        "metricas_ms": {
+          "latencia_smtp_media": 0.0010747215521798746,
+          "cpu_wall_por_email": 0.6880173906398248,
+          "cpu_thread_por_email": 0.6848055918904699,
+          "espera_gil_cpu_por_email": 0.0032117987493549063,
+          "atraso_pos_io_por_email": 0.0,
+          "io_wall_por_email": 0.0033338808888847054
+        },
+        "config": {
+          "campanha_id": "local-processos-4-4fe6e72c",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 0.0,
+          "latencia_max_ms": 0.0,
+          "taxa_falha_transitoria": 0.0,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      },
+      {
+        "modo": "processos",
+        "workers": 8,
+        "chunks": 32,
+        "total_registros": 10000,
+        "smtp": "simulado 0-0ms",
+        "rodadas_hash": 2000,
+        "contadores": {
+          "enviados": 9435,
+          "invalidos": 328,
+          "opt_out": 177,
+          "erros_smtp": 60,
+          "retries": 0,
+          "renderizados": 9495
+        },
+        "correcao_ok": true,
+        "tempos_s": {
+          "total": 1.3378970409976318,
+          "carga_csv": 0.018573749985080212,
+          "fase_paralela": 1.319243958016159,
+          "consolidacao": 7.933299639262259e-05
+        },
+        "throughput_registros_s": 7474.41671037951,
+        "throughput_envios_s": 7052.112166243068,
+        "metricas_ms": {
+          "latencia_smtp_media": 0.002201531033283845,
+          "cpu_wall_por_email": 0.9774166268298746,
+          "cpu_thread_por_email": 0.8612869731437597,
+          "espera_gil_cpu_por_email": 0.11612965368611493,
+          "atraso_pos_io_por_email": 0.0,
+          "io_wall_por_email": 0.006226630525991101
+        },
+        "config": {
+          "campanha_id": "local-processos-8-1fa3f4a2",
+          "assunto": "Oferta exclusiva para você",
+          "rodadas_hash": 2000,
+          "latencia_min_ms": 0.0,
+          "latencia_max_ms": 0.0,
+          "taxa_falha_transitoria": 0.0,
+          "max_tentativas": 4,
+          "smtp_url": null,
+          "seed": 42
+        },
+        "confere_gabarito": true
+      }
+    ]
+  },
+  "teste3": [
+    {
+      "campanha": {
+        "campanha_id": "a107cca2c74d49ef8c6ebf230f6655d2",
+        "total_destinatarios": 10000,
+        "total_lotes": 50,
+        "tamanho_lote": 200,
+        "criada_em": 1792982113.034312,
+        "publicacao_s": 0.022426124996854924,
+        "status_url": "/campanhas/a107cca2c74d49ef8c6ebf230f6655d2/status"
+      },
+      "tempo_resposta_post_s": 0.08874354101135395,
+      "tempo_cliente_s": 13.286953915987397,
+      "tempo_esvaziamento_s": 13.101,
+      "throughput_registros_s": 763.3005114113425,
+      "status_final": {
+        "campanha_id": "a107cca2c74d49ef8c6ebf230f6655d2",
+        "nome": "benchmark-1-workers",
+        "status": "concluida",
+        "consistencia": "eventual",
+        "total": 10000,
+        "processados": 10000,
+        "progresso_pct": 100.0,
+        "enviados": 9435,
+        "invalidos": 328,
+        "opt_out": 177,
+        "erros_smtp": 60,
+        "duplicados_evitados": 0,
+        "leases_perdidos": 0,
+        "latencia_media_smtp_ms": 11.724650874403816,
+        "fila_mensagens_prontas": 0,
+        "criada_em": 1792982113.034312,
+        "atualizada_em": 1792982126.135507,
+        "duracao_s": 13.101
+      },
+      "auditoria_smtp": {
+        "campanha_id": "a107cca2c74d49ef8c6ebf230f6655d2",
+        "dedup_provedor_ativo": true,
+        "requisicoes": 9693,
+        "entregas": 9435,
+        "destinatarios_unicos": 9435,
+        "entregas_duplicadas": 0,
+        "destinatarios_com_duplicata": 0,
+        "replays_idempotentes": 0,
+        "conflitos_em_andamento": 0,
+        "rejeitados_permanentes": 60,
+        "falhas_transitorias": 198,
+        "primeira_entrega": 1792982113.0676513,
+        "ultima_entrega": 1792982126.1348245
+      },
+      "disponibilidade": {
+        "polls_ok": 52,
+        "polls_falhos": 0,
+        "disponibilidade_pct": 100.0,
+        "latencia_status_p50_ms": 4.2160419980064034,
+        "latencia_status_p99_ms": 15.40462500997819
+      },
+      "workers": 1,
+      "auditoria": [
+        {
+          "verificacao": "Todos os registros processados (processados == total)",
+          "ok": true,
+          "detalhe": "10000 / 10000"
+        },
+        {
+          "verificacao": "Contadores conferem com o gabarito (enviados/inválidos/opt-out/erros 550)",
+          "ok": true,
+          "detalhe": "enviados=9435 (esperado 9435), invalidos=328 (esperado 328), opt_out=177 (esperado 177), erros_smtp=60 (esperado 60)"
+        },
+        {
+          "verificacao": "100% dos e-mails válidos entregues no provedor (destinatários únicos)",
+          "ok": true,
+          "detalhe": "9435 / 9435"
+        },
+        {
+          "verificacao": "0 envios duplicados (auditoria do provedor)",
+          "ok": true,
+          "detalhe": "entregas_duplicadas=0"
+        },
+        {
+          "verificacao": "API respondeu a 100% das consultas de status",
+          "ok": true,
+          "detalhe": "52 ok / 0 falhas"
+        }
+      ]
+    },
+    {
+      "campanha": {
+        "campanha_id": "ab47761b42be4a71a48fed65e4266ece",
+        "total_destinatarios": 10000,
+        "total_lotes": 50,
+        "tamanho_lote": 200,
+        "criada_em": 1792982134.203086,
+        "publicacao_s": 0.020604459001333453,
+        "status_url": "/campanhas/ab47761b42be4a71a48fed65e4266ece/status"
+      },
+      "tempo_resposta_post_s": 0.15578904197900556,
+      "tempo_cliente_s": 7.253161624976201,
+      "tempo_esvaziamento_s": 7.019,
+      "throughput_registros_s": 1424.7043738424277,
+      "status_final": {
+        "campanha_id": "ab47761b42be4a71a48fed65e4266ece",
+        "nome": "benchmark-2-workers",
+        "status": "concluida",
+        "consistencia": "eventual",
+        "total": 10000,
+        "processados": 10000,
+        "progresso_pct": 100.0,
+        "enviados": 9435,
+        "invalidos": 328,
+        "opt_out": 177,
+        "erros_smtp": 60,
+        "duplicados_evitados": 0,
+        "leases_perdidos": 0,
+        "latencia_media_smtp_ms": 12.704674933757286,
+        "fila_mensagens_prontas": 0,
+        "criada_em": 1792982134.203086,
+        "atualizada_em": 1792982141.221822,
+        "duracao_s": 7.019
+      },
+      "auditoria_smtp": {
+        "campanha_id": "ab47761b42be4a71a48fed65e4266ece",
+        "dedup_provedor_ativo": true,
+        "requisicoes": 9691,
+        "entregas": 9435,
+        "destinatarios_unicos": 9435,
+        "entregas_duplicadas": 0,
+        "destinatarios_com_duplicata": 0,
+        "replays_idempotentes": 0,
+        "conflitos_em_andamento": 0,
+        "rejeitados_permanentes": 60,
+        "falhas_transitorias": 196,
+        "primeira_entrega": 1792982134.2317133,
+        "ultima_entrega": 1792982141.2217045
+      },
+      "disponibilidade": {
+        "polls_ok": 28,
+        "polls_falhos": 0,
+        "disponibilidade_pct": 100.0,
+        "latencia_status_p50_ms": 4.386832995805889,
+        "latencia_status_p99_ms": 44.85379200195894
+      },
+      "workers": 2,
+      "auditoria": [
+        {
+          "verificacao": "Todos os registros processados (processados == total)",
+          "ok": true,
+          "detalhe": "10000 / 10000"
+        },
+        {
+          "verificacao": "Contadores conferem com o gabarito (enviados/inválidos/opt-out/erros 550)",
+          "ok": true,
+          "detalhe": "enviados=9435 (esperado 9435), invalidos=328 (esperado 328), opt_out=177 (esperado 177), erros_smtp=60 (esperado 60)"
+        },
+        {
+          "verificacao": "100% dos e-mails válidos entregues no provedor (destinatários únicos)",
+          "ok": true,
+          "detalhe": "9435 / 9435"
+        },
+        {
+          "verificacao": "0 envios duplicados (auditoria do provedor)",
+          "ok": true,
+          "detalhe": "entregas_duplicadas=0"
+        },
+        {
+          "verificacao": "API respondeu a 100% das consultas de status",
+          "ok": true,
+          "detalhe": "28 ok / 0 falhas"
+        }
+      ]
+    },
+    {
+      "campanha": {
+        "campanha_id": "438b3647ab76486e9b73ba2b8dbd8ec9",
+        "total_destinatarios": 10000,
+        "total_lotes": 50,
+        "tamanho_lote": 200,
+        "criada_em": 1792982149.102018,
+        "publicacao_s": 0.0163469589970191,
+        "status_url": "/campanhas/438b3647ab76486e9b73ba2b8dbd8ec9/status"
+      },
+      "tempo_resposta_post_s": 0.08217137501924299,
+      "tempo_cliente_s": 4.457093625009293,
+      "tempo_esvaziamento_s": 4.311,
+      "throughput_registros_s": 2319.647413593134,
+      "status_final": {
+        "campanha_id": "438b3647ab76486e9b73ba2b8dbd8ec9",
+        "nome": "benchmark-3-workers",
+        "status": "concluida",
+        "consistencia": "eventual",
+        "total": 10000,
+        "processados": 10000,
+        "progresso_pct": 100.0,
+        "enviados": 9435,
+        "invalidos": 328,
+        "opt_out": 177,
+        "erros_smtp": 60,
+        "duplicados_evitados": 0,
+        "leases_perdidos": 0,
+        "latencia_media_smtp_ms": 11.771769687334393,
+        "fila_mensagens_prontas": 0,
+        "criada_em": 1792982149.102018,
+        "atualizada_em": 1792982153.413269,
+        "duracao_s": 4.311
+      },
+      "auditoria_smtp": {
+        "campanha_id": "438b3647ab76486e9b73ba2b8dbd8ec9",
+        "dedup_provedor_ativo": true,
+        "requisicoes": 9700,
+        "entregas": 9435,
+        "destinatarios_unicos": 9435,
+        "entregas_duplicadas": 0,
+        "destinatarios_com_duplicata": 0,
+        "replays_idempotentes": 0,
+        "conflitos_em_andamento": 0,
+        "rejeitados_permanentes": 60,
+        "falhas_transitorias": 205,
+        "primeira_entrega": 1792982149.1241946,
+        "ultima_entrega": 1792982153.4129019
+      },
+      "disponibilidade": {
+        "polls_ok": 18,
+        "polls_falhos": 0,
+        "disponibilidade_pct": 100.0,
+        "latencia_status_p50_ms": 4.4021249923389405,
+        "latencia_status_p99_ms": 6.5417090081609786
+      },
+      "workers": 3,
+      "auditoria": [
+        {
+          "verificacao": "Todos os registros processados (processados == total)",
+          "ok": true,
+          "detalhe": "10000 / 10000"
+        },
+        {
+          "verificacao": "Contadores conferem com o gabarito (enviados/inválidos/opt-out/erros 550)",
+          "ok": true,
+          "detalhe": "enviados=9435 (esperado 9435), invalidos=328 (esperado 328), opt_out=177 (esperado 177), erros_smtp=60 (esperado 60)"
+        },
+        {
+          "verificacao": "100% dos e-mails válidos entregues no provedor (destinatários únicos)",
+          "ok": true,
+          "detalhe": "9435 / 9435"
+        },
+        {
+          "verificacao": "0 envios duplicados (auditoria do provedor)",
+          "ok": true,
+          "detalhe": "entregas_duplicadas=0"
+        },
+        {
+          "verificacao": "API respondeu a 100% das consultas de status",
+          "ok": true,
+          "detalhe": "18 ok / 0 falhas"
+        }
+      ]
+    }
+  ],
+  "teste4": {
+    "campanha": {
+      "campanha_id": "c8916157902746ef8ada5619e999689e",
+      "total_destinatarios": 10000,
+      "total_lotes": 50,
+      "tamanho_lote": 200,
+      "criada_em": 1792982242.6047711,
+      "publicacao_s": 0.020381624999572523,
+      "status_url": "/campanhas/c8916157902746ef8ada5619e999689e/status"
+    },
+    "tempo_resposta_post_s": 0.10149554201052524,
+    "tempo_cliente_s": 7.5237766669888515,
+    "tempo_esvaziamento_s": 7.283,
+    "throughput_registros_s": 1373.0605519703417,
+    "status_final": {
+      "campanha_id": "c8916157902746ef8ada5619e999689e",
+      "nome": "chaos-test",
+      "status": "concluida",
+      "consistencia": "eventual",
+      "total": 10000,
+      "processados": 10000,
+      "progresso_pct": 100.0,
+      "enviados": 9435,
+      "invalidos": 328,
+      "opt_out": 177,
+      "erros_smtp": 60,
+      "duplicados_evitados": 87,
+      "leases_perdidos": 0,
+      "latencia_media_smtp_ms": 11.501589507154213,
+      "fila_mensagens_prontas": 0,
+      "criada_em": 1792982242.6047711,
+      "atualizada_em": 1792982249.887611,
+      "duracao_s": 7.283
+    },
+    "auditoria_smtp": {
+      "campanha_id": "c8916157902746ef8ada5619e999689e",
+      "dedup_provedor_ativo": true,
+      "requisicoes": 9701,
+      "entregas": 9435,
+      "destinatarios_unicos": 9435,
+      "entregas_duplicadas": 0,
+      "destinatarios_com_duplicata": 0,
+      "replays_idempotentes": 8,
+      "conflitos_em_andamento": 0,
+      "rejeitados_permanentes": 60,
+      "falhas_transitorias": 198,
+      "primeira_entrega": 1792982242.6314833,
+      "ultima_entrega": 1792982249.8873732
+    },
+    "disponibilidade": {
+      "polls_ok": 29,
+      "polls_falhos": 0,
+      "disponibilidade_pct": 100.0,
+      "latencia_status_p50_ms": 4.021125001600012,
+      "latencia_status_p99_ms": 9.312290989328176
+    },
+    "linha_do_tempo": [
+      {
+        "t": 0.107,
+        "processados": 0,
+        "pct": 0.0,
+        "fila": 47,
+        "duplicados_evitados": 0
+      },
+      {
+        "t": 0.365,
+        "processados": 630,
+        "pct": 6.3,
+        "fila": 46,
+        "duplicados_evitados": 0
+      },
+      {
+        "t": 0.624,
+        "processados": 1260,
+        "pct": 12.6,
+        "fila": 42,
+        "duplicados_evitados": 0
+      },
+      {
+        "t": 0.883,
+        "processados": 1809,
+        "pct": 18.09,
+        "fila": 40,
+        "duplicados_evitados": 0
+      },
+      {
+        "t": 1.142,
+        "processados": 2425,
+        "pct": 24.25,
+        "fila": 36,
+        "duplicados_evitados": 0
+      },
+      {
+        "t": 1.401,
+        "processados": 3112,
+        "pct": 31.12,
+        "fila": 33,
+        "duplicados_evitados": 0
+      },
+      {
+        "t": 1.852,
+        "processados": 3557,
+        "pct": 35.57,
+        "fila": 31,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 2.109,
+        "processados": 3825,
+        "pct": 38.25,
+        "fila": 30,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 2.363,
+        "processados": 4066,
+        "pct": 40.66,
+        "fila": 29,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 2.622,
+        "processados": 4277,
+        "pct": 42.77,
+        "fila": 28,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 2.878,
+        "processados": 4536,
+        "pct": 45.36,
+        "fila": 27,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 3.137,
+        "processados": 4739,
+        "pct": 47.39,
+        "fila": 26,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 3.398,
+        "processados": 4936,
+        "pct": 49.36,
+        "fila": 25,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 3.658,
+        "processados": 5130,
+        "pct": 51.3,
+        "fila": 24,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 3.917,
+        "processados": 5198,
+        "pct": 51.98,
+        "fila": 23,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 4.175,
+        "processados": 5442,
+        "pct": 54.42,
+        "fila": 22,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 4.434,
+        "processados": 5640,
+        "pct": 56.4,
+        "fila": 21,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 4.688,
+        "processados": 5837,
+        "pct": 58.37,
+        "fila": 19,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 4.945,
+        "processados": 6329,
+        "pct": 63.29,
+        "fila": 17,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 5.201,
+        "processados": 6816,
+        "pct": 68.16,
+        "fila": 15,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 5.46,
+        "processados": 7317,
+        "pct": 73.17,
+        "fila": 13,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 5.717,
+        "processados": 7710,
+        "pct": 77.1,
+        "fila": 11,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 5.976,
+        "processados": 8104,
+        "pct": 81.04,
+        "fila": 9,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 6.231,
+        "processados": 8516,
+        "pct": 85.16,
+        "fila": 7,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 6.489,
+        "processados": 8886,
+        "pct": 88.86,
+        "fila": 5,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 6.746,
+        "processados": 9197,
+        "pct": 91.97,
+        "fila": 4,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 7.004,
+        "processados": 9596,
+        "pct": 95.96,
+        "fila": 2,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 7.262,
+        "processados": 9887,
+        "pct": 98.87,
+        "fila": 0,
+        "duplicados_evitados": 87
+      },
+      {
+        "t": 7.524,
+        "processados": 10000,
+        "pct": 100.0,
+        "fila": 0,
+        "duplicados_evitados": 87
+      }
+    ],
+    "evento_kill": {
+      "t": 1.401,
+      "progresso_pct": 31.12,
+      "container": "emailmassa-worker-1",
+      "processados": 3112
+    },
+    "workers_antes": 3,
+    "workers_depois": 2,
+    "auditoria": [
+      {
+        "verificacao": "Todos os registros processados (processados == total)",
+        "ok": true,
+        "detalhe": "10000 / 10000"
+      },
+      {
+        "verificacao": "Contadores conferem com o gabarito (enviados/inválidos/opt-out/erros 550)",
+        "ok": true,
+        "detalhe": "enviados=9435 (esperado 9435), invalidos=328 (esperado 328), opt_out=177 (esperado 177), erros_smtp=60 (esperado 60)"
+      },
+      {
+        "verificacao": "100% dos e-mails válidos entregues no provedor (destinatários únicos)",
+        "ok": true,
+        "detalhe": "9435 / 9435"
+      },
+      {
+        "verificacao": "0 envios duplicados (auditoria do provedor)",
+        "ok": true,
+        "detalhe": "entregas_duplicadas=0"
+      },
+      {
+        "verificacao": "API respondeu a 100% das consultas de status",
+        "ok": true,
+        "detalhe": "29 ok / 0 falhas"
+      },
+      {
+        "verificacao": "Um worker foi derrubado durante a campanha",
+        "ok": true,
+        "detalhe": "3 -> 2 workers (emailmassa-worker-1)"
+      },
+      {
+        "verificacao": "Reprocessamento ocorreu e foi barrado pela idempotência",
+        "ok": true,
+        "detalhe": "duplicados_evitados (Redis SETNX)=87, replays bloqueados no provedor=8"
+      }
+    ],
+    "logs_reentrega": [
+      "worker-2  | 2026-10-26 02:37:27,186 [worker 7a6505b14173] INFO lote c8916157902746ef8ada5619e999689e:16 (REENTREGUE) ok em 3.06s {'duplicados_evitados': 87, 'enviados': 110, 'opt_out': 1, 'invalidos': 2}"
+    ]
+  }
+}
